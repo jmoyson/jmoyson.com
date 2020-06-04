@@ -22,11 +22,11 @@ const BlogIndexPage = ({ data, count, location }) => {
 export default BlogIndexPage;
 
 export const blogPageQuery = graphql`
-  query BlogQueryEn {
+  query BlogQueryFr {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
-        frontmatter: { templateKey: { eq: "blog-post" }, langKey: { eq: "en" } }
+        frontmatter: { templateKey: { eq: "blog-post" }, langKey: { eq: "fr" } }
       }
     ) {
       edges {

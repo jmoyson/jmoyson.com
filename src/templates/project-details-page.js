@@ -2,16 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Projects from "../components/Projects";
 
-export const ProjectPageTemplate = ({ projects, intl }) => (
+export const ProjectDetailsPageTemplate = ({ heading, description, intl }) => (
   <div className='content'>
     <section className='section section--gradient'>
       <div className='container'>
         <div className='section'>
           <div className='columns'>
             <div className='column is-10 is-offset-1'>
-              <Projects gridItems={projects.blurbs} />
+              <h1>{heading}</h1>
+              <h2>{description}</h2>
             </div>
           </div>
         </div>
@@ -20,29 +20,25 @@ export const ProjectPageTemplate = ({ projects, intl }) => (
   </div>
 );
 
-ProjectPageTemplate.propTypes = {
+ProjectDetailsPageTemplate.propTypes = {
   heading: PropTypes.string,
   description: PropTypes.string,
-  projects: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
 };
 
-const ProjectPage = ({ data, location }) => {
+const ProjectDetailPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout location={location}>
-      <ProjectPageTemplate
+      <ProjectDetailsPageTemplate
         heading={frontmatter.heading}
         description={frontmatter.description}
-        projects={frontmatter.projects}
       />
     </Layout>
   );
 };
 
-ProjectPage.propTypes = {
+ProjectDetailPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -50,29 +46,14 @@ ProjectPage.propTypes = {
   }),
 };
 
-export default ProjectPage;
+export default ProjectDetailPage;
 
-export const projectPageQuery = graphql`
-  query ProjectPage($id: String!) {
+export const projectDetailPageQuery = graphql`
+  query ProjectDetailPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         heading
         description
-        projects {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-            demo
-            name
-            sources
-          }
-        }
       }
     }
   }

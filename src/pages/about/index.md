@@ -1,6 +1,7 @@
 ---
 templateKey: about-page
 path: /about
+langKey: "en"
 title: About
 ---
 

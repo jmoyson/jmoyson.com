@@ -76,6 +76,47 @@ collections:
                   },
                 ],
             }
+      - file: "src/pages/index.fr.md"
+        label: "Page d'acceuil"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
+          - {
+              label: Projects,
+              name: projects,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Blurbs,
+                    name: blurbs,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: text },
+                        { label: Name, name: name, widget: string },
+                        { label: Sources, name: sources, widget: string },
+                        { label: Demo, name: demo, widget: string },
+                      ],
+                  },
+                ],
+            }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -88,8 +129,53 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/about/index.fr.md"
+        label: "A Propos"
+        name: "about"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/projects/index.md"
         label: "Projects"
+        name: "projects"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "project-page",
+            }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Description, name: description, widget: string }
+          - {
+              label: Projects,
+              name: projects,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Blurbs,
+                    name: blurbs,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: text },
+                        { label: Name, name: name, widget: string },
+                        { label: Sources, name: sources, widget: string },
+                        { label: Demo, name: demo, widget: string },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/pages/projects/index.fr.md"
+        label: "Projets"
         name: "projects"
         fields:
           - {

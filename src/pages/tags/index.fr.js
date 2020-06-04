@@ -20,7 +20,7 @@ const TagsPage = ({
 export default TagsPage;
 
 export const tagPageQuery = graphql`
-  query TagsQuery {
+  query TagsQueryFr {
     site {
       siteMetadata {
         title
@@ -28,7 +28,7 @@ export const tagPageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 1000
-      filter: { frontmatter: { langKey: { eq: "en" } } }
+      filter: { frontmatter: { langKey: { eq: "fr" } } }
     ) {
       group(field: frontmatter___tags) {
         fieldValue

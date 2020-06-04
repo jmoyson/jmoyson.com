@@ -1,16 +1,49 @@
+const languages = require("./src/data/languages");
+
 module.exports = {
   siteMetadata: {
     title: "JMOYSON.COM",
     description:
       "Jérémy Moyson personal website. Made with Gatsby Hosted on Netlify",
+    languages,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-plugin-i18n",
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-161577503-1",
+        langKeyForNull: "any",
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: true,
+        prefixDefault: false,
+        markdownRemark: {
+          postPage: "src/templates/blog-post.js",
+          query: `
+            {
+              allMarkdownRemark {
+                edges {
+                  node {
+                    fields {
+                      slug,
+                      langKey
+                    }
+                  }
+                }
+              }
+            }
+          `,
+        },
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: "UA-161577503-1", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-analytics", // default
+          anonymize: true, // default
+        },
       },
     },
     "gatsby-plugin-sass",
@@ -73,7 +106,21 @@ module.exports = {
               destinationDir: "static",
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-i18n-tags",
+      options: {
+        // Default options
+        tagPage: "src/templates/tags.js",
+        tagsUrl: "/tags/",
+        langKeyForNull: "any",
+        langKeyDefault: languages.defaultLangKey,
+        prefixDefault: false,
       },
     },
     {
