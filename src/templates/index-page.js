@@ -10,7 +10,7 @@ import BlogRoll from "../components/BlogRoll";
 import "intl";
 import { FormattedMessage } from "react-intl";
 
-export const IndexPageTemplate = ({ data, count }) => {
+export const IndexPageTemplate = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
 
   const blogPosts = edges.filter(
@@ -99,10 +99,10 @@ IndexPageTemplate.propTypes = {
   }),
 };
 
-const IndexPage = ({ data, count, location }) => {
+const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location}>
-      <IndexPageTemplate data={data} count={count} />
+      <IndexPageTemplate data={data} />
     </Layout>
   );
 };
