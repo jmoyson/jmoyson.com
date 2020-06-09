@@ -13,7 +13,7 @@ tags:
 
 ## Étape 1 - Instale Prettier
 
-### Instale le package npm Prettier
+### Installe le package npm Prettier
 
 Tu peut installer le plugin au niveau global ou dans les dependences de development de ton projet.
 
@@ -26,7 +26,7 @@ cd project/
 npm install --dev prettier
 ```
 
-### Instale le plugin VSCode Prettier
+### Installe le plugin VSCode Prettier
 
 - Click sur les touches `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrire le panneau d'extension.
 - Recherche "prettier" dans le "Marketplace" des extensions et click sur install.
@@ -34,9 +34,9 @@ npm install --dev prettier
 
 ---
 
-## Étape 2 - Instale ESLint
+## Étape 2 - Installe ESLint
 
-### Instale le package npm ESLint
+### Installe le package npm ESLint
 
 Pareil que pour prettier, tu peut installer le plugin au niveau global ou dans les dependences de development de ton projet.
 
@@ -49,7 +49,7 @@ cd project/
 npm install --dev eslint
 ```
 
-### Instale le plugin ESLint Prettier
+### Installe le plugin ESLint Prettier
 
 - Click sur les touches `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrire le panneau d'extension.
 - Recherche "eslint" dans le "Marketplace" des extensions et click sur install.
