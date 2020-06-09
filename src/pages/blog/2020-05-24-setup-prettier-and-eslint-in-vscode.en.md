@@ -66,7 +66,7 @@ To format a document you can use the Command Palette `Cmd+Shift+P` and select th
 
 You can also use the shortcut `Shift+Option+F`.
 
-**To configure the autoformat on save on save:**
+**To configure the autoformat on save:**
 
 - Press `Cmd+,` to open the Setting Panel
 

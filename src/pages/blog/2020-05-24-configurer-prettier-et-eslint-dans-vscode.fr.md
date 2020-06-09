@@ -3,8 +3,7 @@ templateKey: blog-post
 title: Configurer Prettier et ESLint dans VSCode
 langKey: "fr"
 date: 2020-05-24T12:04:22.699Z
-description: Quick tutorial on how to configure the Prettier and ESLint plugin
-  to have clean and formatted project automatically.
+description: Guide rapide pour configurer les plugins Prettier et ESLint dans VSCode.
 featuredpost: false
 featuredimage: /img/vscode-logo.png
 tags:
@@ -12,11 +11,11 @@ tags:
   - Dev
 ---
 
-## Step 1 - Install Prettier
+## Étape 1 - Instale Prettier
 
-### Install the Prettier npm package
+### Instale le package npm Prettier
 
-You can install it globally in your dev environnement or in the dev dependencies of the project.
+Tu peut installer le plugin au niveau global ou dans les dependences de development de ton projet.
 
 ```sh
 npm install --global prettier
@@ -27,19 +26,19 @@ cd project/
 npm install --dev prettier
 ```
 
-### Install the Prettier VSCode plugin
+### Instale le plugin VSCode Prettier
 
-- Press `Cmd+Shift+X` or `Ctrl+Shift+X` to open the extensions panel.
-- Search for "prettier" in the Extensions Marketplace and click install.
-- Reload VSCode.
+- Click sur les touches `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrire le panneau d'extension.
+- Recherche "prettier" dans le "Marketplace" des extensions et click sur install.
+- Relance VSCode.
 
 ---
 
-## Step 2 - Install ESLint
+## Étape 2 - Instale ESLint
 
-### Install the ESLint npm package
+### Instale le package npm ESLint
 
-Same as prettier, you can install it globally in your dev environnement or in the dev dependencies of the project.
+Pareil que pour prettier, tu peut installer le plugin au niveau global ou dans les dependences de development de ton projet.
 
 ```sh
 npm install --global eslint
@@ -50,35 +49,35 @@ cd project/
 npm install --dev eslint
 ```
 
-### Install the ESLint VSCode plugin
+### Instale le plugin ESLint Prettier
 
-- Press `Cmd+Shift+X` or `Ctrl+Shift+X` to open the extensions panel.
-- Search for "eslint" in the Extensions Marketplace and click install.
-- Reload VSCode.
+- Click sur les touches `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrire le panneau d'extension.
+- Recherche "eslint" dans le "Marketplace" des extensions et click sur install.
+- Relance VSCode.
 
 ---
 
-## Using Prettier and ESLint
+## Utiliser Prettier et ESLint
 
-### Autoformat documents
+### Formattage automatique des documents
 
-To format a document you can use the Command Palette `Cmd+Shift+P` and select the command **_>Format Document_**.
+Pour formatter un document dans VSCode, tu peut utiliser la Palette de commande `Cmd+Shift+P` et executer la commande **_>Format Document_**.
 
-You can also use the shortcut `Shift+Option+F`.
+Tu peux aussi utiliser le raccourcis clavier `Shift+Option+F`.
 
-**To configure the autoformat on save on save:**
+**Pour configurer le formattage automatique lors de la sauvegarde d'un document:**
 
-- Press `Cmd+,` to open the Setting Panel
+- Appuis sur `Cmd+,` pour ouvrire le panneau des reglages VSCode
 
-- Search **_onSave_** and set **Editor: Format on Save** to **true**
+- Recherche **_onSave_** et met la valeur **Editor: Format on Save** : **true**
 
-### Configure a new project
+### Configurer un nouveau projet
 
 ```sh
 npm i --dev eslint-config-prettier eslint-plugin-prettier
 ```
 
-Init the .eslintrc.js
+Initialisation de .eslintrc.js
 
 ```sh
 eslint --init
@@ -92,7 +91,7 @@ eslint --init
 ? What format do you want your config file to be in? JavaScript
 ```
 
-Then in .eslintrc.js:
+Puis on ajoute dans .eslintrc.js:
 
 ```json
 {
