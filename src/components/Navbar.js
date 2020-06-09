@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "gatsby";
+import Link from "./Link";
 import logo from "../img/logo.svg";
 import github from "../img/social/github.svg";
 import twitter from "../img/social/twitter.svg";
+import SelectLanguage from "./SelectLanguage";
+import { FormattedMessage } from "react-intl";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: "",
+      langs: props.langs,
     };
   }
 
@@ -45,10 +48,13 @@ const Navbar = class extends React.Component {
             <Link to='/' className='navbar-item' title='Home'>
               <img
                 src={logo}
-                alt='Kaldi'
+                alt='jmoyson.com logo'
                 style={{ height: "3rem", maxHeight: "3rem" }}
               />
             </Link>
+
+            <SelectLanguage langs={this.state.langs} />
+
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -63,22 +69,26 @@ const Navbar = class extends React.Component {
               <span />
             </div>
           </div>
+
           <div
             id='navMenu'
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className='navbar-end has-text-centered'>
-              <Link className='navbar-item' to='/about'>
-                About
+              <Link className='navbar-item' to='/'>
+                <FormattedMessage id='home' />
               </Link>
-              <Link className='navbar-item' to='/projects'>
-                Projects
+              <Link className='navbar-item' to='/about'>
+                <FormattedMessage id='about' />
               </Link>
               <Link className='navbar-item' to='/blog'>
-                Blog
+                <FormattedMessage id='blog' />
+              </Link>
+              <Link className='navbar-item' to='/projects'>
+                <FormattedMessage id='projects' />
               </Link>
               <Link className='navbar-item' to='/contact'>
-                Contact
+                <FormattedMessage id='contact' />
               </Link>
               <a
                 className='navbar-item'

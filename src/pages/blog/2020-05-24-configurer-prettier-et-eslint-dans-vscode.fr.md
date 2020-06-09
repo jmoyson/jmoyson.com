@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
-title: Setup Prettier and ESLint in VSCode
+title: Configurer Prettier et ESLint dans VSCode
+langKey: "fr"
 date: 2020-05-24T12:04:22.699Z
 description: Quick tutorial on how to configure the Prettier and ESLint plugin
   to have clean and formatted project automatically.
