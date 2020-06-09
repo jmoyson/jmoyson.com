@@ -50,7 +50,7 @@ export const IndexPageTemplate = ({ data, count }) => {
                   </div>
                   <div className='columns'>
                     <div className='column is-12 has-text-centered'>
-                      <Link className='button' to='/about'>
+                      <Link className='btn' to='/about'>
                         <FormattedMessage id='learnMoreAboutMe' />
                       </Link>
                     </div>

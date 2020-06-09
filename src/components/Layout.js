@@ -9,7 +9,7 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
-import { IntlProvider } from "react-intl";
+import { IntlProvider, FormattedMessage } from "react-intl";
 
 import fr from "../data/messages/fr";
 import en from "../data/messages/en";
@@ -79,10 +79,11 @@ const TemplateWrapper = ({ children, location }) => {
         <div>{children}</div>
         <CookieConsent
           location='bottom'
-          enableDeclineButton
+          buttonText={<FormattedMessage id='Iunderstand' />}
           cookieName='gatsby-gdpr-google-analytics'
+          style={{ background: "#333" }}
         >
-          This website uses cookies to enhance the user experience.
+          <FormattedMessage id='coockieConsent' />
         </CookieConsent>
 
         <Footer />

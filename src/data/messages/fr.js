@@ -23,4 +23,7 @@ module.exports = {
   searchAllTags: "Rechercher tous les tags",
   learnMoreAboutMe: "En savoir plus sur moi",
   latestArticles: "Derniers articles",
+  coockieConsent:
+    "J'utilise les cookies sur ce site pour améliorer votre expérience.",
+  Iunderstand: "J'ai compris",
 };

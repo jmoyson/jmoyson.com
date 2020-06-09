@@ -23,4 +23,6 @@ module.exports = {
   searchAllTags: "Search all tags",
   learnMoreAboutMe: "Learn more about me",
   latestArticles: "Latest articles",
+  coockieConsent: "I use cookies on this website to enhance your experience.",
+  Iunderstand: "I understand",
 };
