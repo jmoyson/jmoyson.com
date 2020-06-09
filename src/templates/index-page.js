@@ -10,22 +10,7 @@ import BlogRoll from "../components/BlogRoll";
 import "intl";
 import { FormattedMessage } from "react-intl";
 
-export const IndexPageTemplate = ({ data }) => {
-  const { edges } = data.allMarkdownRemark;
-
-  const blogPosts = edges.filter(
-    ({ node }) => node.frontmatter.templateKey === "blog-post"
-  );
-  const projects = edges.filter(
-    ({ node }) => node.frontmatter.templateKey === "project-details-page"
-  );
-
-  const indexContent = edges.find(
-    ({ node }) => node.frontmatter.templateKey === "index-page"
-  );
-
-  const mainpitch = indexContent.node.frontmatter.mainpitch;
-
+export const IndexPageTemplate = ({ mainpitch, projects, blogPosts }) => {
   return (
     <div>
       <section className='section section--gradient'>
@@ -94,15 +79,37 @@ export const IndexPageTemplate = ({ data }) => {
 };
 
 IndexPageTemplate.propTypes = {
-  projects: PropTypes.shape({
-    blurbs: PropTypes.array,
+  blogPosts: PropTypes.array,
+  projects: PropTypes.array,
+  mainpitch: PropTypes.shape({
+    title: PropTypes.string,
+    content: PropTypes.string,
   }),
 };
 
 const IndexPage = ({ data, location }) => {
+  const { edges } = data.allMarkdownRemark;
+
+  const blogPosts = edges.filter(
+    ({ node }) => node.frontmatter.templateKey === "blog-post"
+  );
+
+  const projects = edges.filter(
+    ({ node }) => node.frontmatter.templateKey === "project-details-page"
+  );
+
+  const indexContent = edges.find(
+    ({ node }) => node.frontmatter.templateKey === "index-page"
+  );
+
+  const mainpitch = indexContent.node.frontmatter.mainpitch;
   return (
     <Layout location={location}>
-      <IndexPageTemplate data={data} />
+      <IndexPageTemplate
+        blogPosts={blogPosts}
+        projects={projects}
+        mainpitch={mainpitch}
+      />
     </Layout>
   );
 };

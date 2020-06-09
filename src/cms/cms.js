@@ -5,7 +5,7 @@ import BlogPostPreview from "./preview-templates/BlogPostPreview";
 import IndexPagePreview from "./preview-templates/IndexPagePreview";
 
 CMS.registerPreviewTemplate("home", IndexPagePreview);
-CMS.registerPreviewTemplate("acceuil", IndexPagePreview);
+CMS.registerPreviewTemplate("accueil", IndexPagePreview);
 CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("a-propos", AboutPagePreview);
 CMS.registerPreviewTemplate("blog", BlogPostPreview);

@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
+langKey: en
 title: Setup Prettier and ESLint in VSCode
-langKey: "en"
 date: 2020-05-24T12:04:22.699Z
 description: Quick tutorial on how to configure the Prettier and ESLint plugin
   to have clean and formatted project automatically.
@@ -11,29 +11,28 @@ tags:
   - TIL
   - Dev
 ---
-
 ## Step 1 - Install Prettier
 
 ### Install the Prettier npm package
 
 You can install it globally in your dev environnement or in the dev dependencies of the project.
 
-```sh
+```shell
 npm install --global prettier
 ```
 
-```sh
+```shell
 cd project/
 npm install --dev prettier
 ```
 
 ### Install the Prettier VSCode plugin
 
-- Press `Cmd+Shift+X` or `Ctrl+Shift+X` to open the extensions panel.
-- Search for "prettier" in the Extensions Marketplace and click install.
-- Reload VSCode.
+* Press `Cmd+Shift+X` or `Ctrl+Shift+X` to open the extensions panel.
+* Search for "prettier" in the Extensions Marketplace and click install.
+* Reload VSCode.
 
----
+- - -
 
 ## Step 2 - Install ESLint
 
@@ -41,46 +40,45 @@ npm install --dev prettier
 
 Same as prettier, you can install it globally in your dev environnement or in the dev dependencies of the project.
 
-```sh
+```shell
 npm install --global eslint
 ```
 
-```sh
+```shell
 cd project/
 npm install --dev eslint
 ```
 
 ### Install the ESLint VSCode plugin
 
-- Press `Cmd+Shift+X` or `Ctrl+Shift+X` to open the extensions panel.
-- Search for "eslint" in the Extensions Marketplace and click install.
-- Reload VSCode.
+* Press `Cmd+Shift+X` or `Ctrl+Shift+X` to open the extensions panel.
+* Search for "eslint" in the Extensions Marketplace and click install.
+* Reload VSCode.
 
----
+- - -
 
 ## Using Prettier and ESLint
 
 ### Autoformat documents
 
-To format a document you can use the Command Palette `Cmd+Shift+P` and select the command **_>Format Document_**.
+To format a document you can use the Command Palette `Cmd+Shift+P` and select the command ***\>Format Document***.
 
 You can also use the shortcut `Shift+Option+F`.
 
 **To configure the autoformat on save:**
 
-- Press `Cmd+,` to open the Setting Panel
-
-- Search **_onSave_** and set **Editor: Format on Save** to **true**
+* Press `Cmd+,` to open the Setting Panel
+* Search ***onSave*** and set **Editor: Format on Save** to **true**
 
 ### Configure a new project
 
-```sh
+```shell
 npm i --dev eslint-config-prettier eslint-plugin-prettier
 ```
 
 Init the .eslintrc.js
 
-```sh
+```shell
 eslint --init
 ? How would you like to use ESLint? To check syntax, find problems, and enforce code style
 ? What type of modules does your project use? JavaScript modules (import/export)

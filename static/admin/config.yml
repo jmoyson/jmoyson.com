@@ -8,6 +8,9 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
+# when using the default proxy server port
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
@@ -16,7 +19,7 @@ collections:
     label: "Blog"
     folder: "src/pages/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.{{langKey}}"
     fields:
       - {
           label: "Template Key",
@@ -42,7 +45,7 @@ collections:
     label: "Pages"
     files:
       - file: "src/pages/index.md"
-        label: "Landing Page"
+        label: "Home 🇺🇸"
         name: "home"
         fields:
           - {
@@ -50,6 +53,12 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "index-page",
+            }
+          - {
+              label: "Language Key",
+              name: "langKey",
+              widget: "hidden",
+              default: "en",
             }
           - {
               label: Mainpitch,
@@ -62,7 +71,7 @@ collections:
                 ],
             }
       - file: "src/pages/index.fr.md"
-        label: "Page d'acceuil"
+        label: "Accueil 🇫🇷"
         name: "accueil"
         fields:
           - {
@@ -70,6 +79,12 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "index-page",
+            }
+          - {
+              label: "Language Key",
+              name: "langKey",
+              widget: "hidden",
+              default: "fr",
             }
           - {
               label: Mainpitch,
@@ -82,7 +97,7 @@ collections:
                 ],
             }
       - file: "src/pages/about/index.md"
-        label: "About"
+        label: "About 🇺🇸"
         name: "about"
         fields:
           - {
@@ -91,10 +106,16 @@ collections:
               widget: "hidden",
               default: "about-page",
             }
+          - {
+              label: "Language Key",
+              name: "langKey",
+              widget: "hidden",
+              default: "en",
+            }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/about/index.fr.md"
-        label: "A Propos"
+        label: "A Propos 🇫🇷"
         name: "a-propos"
         fields:
           - {
@@ -102,6 +123,12 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "about-page",
+            }
+          - {
+              label: "Language Key",
+              name: "langKey",
+              widget: "hidden",
+              default: "fr",
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
