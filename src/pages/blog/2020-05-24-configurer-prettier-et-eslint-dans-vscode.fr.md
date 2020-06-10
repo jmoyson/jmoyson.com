@@ -3,14 +3,23 @@ templateKey: blog-post
 langKey: fr
 title: Configurer Prettier et ESLint dans VSCode
 date: 2020-05-24T12:04:22.699Z
-description: Guide rapide pour configurer les plugins Prettier et ESLint dans VSCode.
+description: Guide rapide pour configurer les plugins Prettier et ESLint dans
+  VSCode afin de formatter automatiquement votre code.
 featuredpost: false
 featuredimage: /img/vscode-logo.png
 tags:
   - TIL
   - Dev
 ---
-## Étape 1 - Instale Prettier
+## Étape 1 - Installe Prettier
+
+<div style="text-align:center">
+
+![Prettier Logo](/img/prettier.png "Prettier Logo")
+
+<https://prettier.io/>
+
+</div>
 
 ### Installe le package npm Prettier
 
@@ -27,7 +36,8 @@ npm install --dev prettier
 
 ### Installe le plugin VSCode Prettier
 
-* Click sur les touches `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrire le panneau d'extension.
+* Lance VSCode.  
+* Tape la commande `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrir le panneau d'extension.
 * Recherche "prettier" dans le "Marketplace" des extensions et click sur install.
 * Relance VSCode.
 
@@ -50,7 +60,7 @@ npm install --dev eslint
 
 ### Installe le plugin ESLint Prettier
 
-* Click sur les touches `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrire le panneau d'extension.
+* Click sur les touches `Cmd+Shift+X` ou `Ctrl+Shift+X` pour ouvrir le panneau d'extension.
 * Recherche "eslint" dans le "Marketplace" des extensions et click sur install.
 * Relance VSCode.
 
@@ -58,15 +68,23 @@ npm install --dev eslint
 
 ## Utiliser Prettier et ESLint
 
-### Formattage automatique des documents
+<div style="text-align:center">
+
+![Prettier Logo](/img/eslint.png "ESLint Logo")
+
+<https://eslint.org/>
+
+</div>
+
+### Formatage automatique des documents
 
 Pour formatter un document dans VSCode, tu peut utiliser la Palette de commande `Cmd+Shift+P` et executer la commande ***\>Format Document***.
 
 Tu peux aussi utiliser le raccourcis clavier `Shift+Option+F`.
 
-**Pour configurer le formattage automatique lors de la sauvegarde d'un document:**
+**Pour configurer le formatage automatique lors de la sauvegarde d'un document:**
 
-* Appuis sur `Cmd+,` pour ouvrire le panneau des reglages VSCode
+* Appuis sur `Cmd+,` pour ouvrir le panneau des réglages VSCode
 * Recherche ***onSave*** et met la valeur **Editor: Format on Save** : **true**
 
 ### Configurer un nouveau projet
@@ -89,7 +107,7 @@ eslint --init
 ? What format do you want your config file to be in? JavaScript
 ```
 
-Puis on ajoute dans .eslintrc.js:
+Puis on ajoute le plugin prettier dans .eslintrc.js:
 
 ```json
 {
