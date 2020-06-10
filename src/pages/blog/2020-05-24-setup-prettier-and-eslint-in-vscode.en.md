@@ -4,7 +4,8 @@ langKey: en
 title: Setup Prettier and ESLint in VSCode
 date: 2020-05-24T12:04:22.699Z
 description: Quick tutorial on how to configure the Prettier and ESLint plugin
-  to have clean and formatted project automatically.
+  in VSCode to have a clean and formatted code automatically your Node.js
+  project
 featuredpost: false
 featuredimage: /img/vscode-logo.png
 tags:
@@ -12,6 +13,14 @@ tags:
   - Dev
 ---
 ## Step 1 - Install Prettier
+
+<div style="text-align:center">
+
+![Prettier Logo](/img/prettier.png "Prettier Logo")
+
+<https://prettier.io/>
+
+</div>
 
 ### Install the Prettier npm package
 
@@ -36,6 +45,14 @@ npm install --dev prettier
 
 ## Step 2 - Install ESLint
 
+<div style="text-align:center">
+
+![Prettier Logo](/img/eslint.png "Prettier Logo")
+
+<https://eslint.org/>
+
+</div>
+
 ### Install the ESLint npm package
 
 Same as prettier, you can install it globally in your dev environnement or in the dev dependencies of the project.
@@ -51,6 +68,7 @@ npm install --dev eslint
 
 ### Install the ESLint VSCode plugin
 
+* Open VSCode
 * Press `Cmd+Shift+X` or `Ctrl+Shift+X` to open the extensions panel.
 * Search for "eslint" in the Extensions Marketplace and click install.
 * Reload VSCode.
@@ -78,7 +96,7 @@ npm i --dev eslint-config-prettier eslint-plugin-prettier
 
 Init the .eslintrc.js
 
-```shell
+```tex
 eslint --init
 ? How would you like to use ESLint? To check syntax, find problems, and enforce code style
 ? What type of modules does your project use? JavaScript modules (import/export)
@@ -90,7 +108,7 @@ eslint --init
 ? What format do you want your config file to be in? JavaScript
 ```
 
-Then in .eslintrc.js:
+Then in .eslintrc.js add the prettier plugin:
 
 ```json
 {
